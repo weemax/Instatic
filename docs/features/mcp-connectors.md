@@ -162,6 +162,10 @@ There is intentionally no headless page-tree mutation path. The open editor stor
 
 Writes remain drafts. Clients should finish and verify an edit sequence, then call `site_publish` once only when deployment was requested.
 
+## Operator toolkit
+
+`agent-toolkit/` is an optional client for this endpoint. It does not add a server, a publisher, or a page-tree writer. The default command path is read-only; draft calls and `site_publish` / `content_set_document_status` are separate local gates that require a backup acknowledgement and a dry-run receipt. Those gates bind only that process. They are not a security boundary and they do not replace `toolAllowedForCapabilities`. Setup, the smoke test, and the residual limits are in `agent-toolkit/README.md`.
+
 ## Data model
 
 `ai_mcp_connectors` remains the persistent owner/capability grant (migrations `018` and `019`):

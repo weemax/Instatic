@@ -73,6 +73,22 @@ export default defineConfig([
     },
   },
   {
+    // The agent toolkit is a Bun CLI, not a React module. It is linted, but
+    // the browser/React rules for the admin app do not apply.
+    files: ['agent-toolkit/**/*.ts'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        fetch: 'readonly',
+      },
+    },
+    rules: {
+      'react-refresh/only-export-components': 'off',
+      'react-hooks/rules-of-hooks': 'off',
+      'react-compiler/react-compiler': 'off',
+    },
+  },
+  {
     // Example plugins are standalone projects that ship as zip packages —
     // they aren't part of the host's React Fast-Refresh graph (Vite never
     // serves them) and they don't run under the host's React 19 strict

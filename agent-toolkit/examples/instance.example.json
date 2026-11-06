@@ -1,0 +1,6 @@
+{
+  "origin": "https://staging.example.com",
+  "connectorLabel": "staging-read-only",
+  "branchLabel": "main",
+  "publicPath": "/"
+}
