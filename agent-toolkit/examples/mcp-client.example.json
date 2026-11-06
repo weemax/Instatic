@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "instatic": {
+      "url": "https://staging.example.com/_instatic/mcp",
+      "headers": {
+        "Authorization": "Bearer ${INSTATIC_MCP_TOKEN}"
+      }
+    }
+  }
+}
